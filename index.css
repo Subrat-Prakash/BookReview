@@ -208,8 +208,7 @@ img{
 
 }
 #cir-1, #cir-2, #cir-3, #cir-4, #cir-5, #cir-6, #cir-7, #cir-8, #cir-9, #cir-10{
-    padding-top: 70px;
-    padding-right: 70px;
+    padding: 50px 30px;
     color: rgb(4, 0, 255);
     height: 100%;
     width: 100%;             
