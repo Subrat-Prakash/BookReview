@@ -23,6 +23,8 @@
 body{
     height: 100vh;
     background-color: var(--body-color);
+    /* background-color: #f8f8fd; */   
+
 }
 
 body.dark{
@@ -34,19 +36,20 @@ body.dark{
 }
 
 nav{
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     height: 70px;
     width: 100%;
-    background-color: var(--nav-color);
+    /* background-color: var(--nav-color); */
+    background-color: transparent;
     z-index: 100;
 }
 
-body.dark nav{
+/* body.dark nav{
     border: 1px solid #393838;
 
-}
+} */
 
 nav .nav-bar{
     position: relative;
@@ -54,13 +57,13 @@ nav .nav-bar{
     max-width: 1000px;
     width: 100%;
     background-color: var(--nav-color);
+    background-color: transparent;
     margin: 0 auto;
     padding: 0 30px;
     display: flex;
     align-items: center;
     justify-content: space-between;
 }
-
 nav .nav-bar .sidebarOpen{
     color: var(--text-color);
     font-size: 25px;
@@ -68,28 +71,23 @@ nav .nav-bar .sidebarOpen{
     cursor: pointer;
     display: none;
 }
-
 nav .nav-bar .logo a{
     font-size: 25px;
     font-weight: 500;
     color: var(--text-color);
     text-decoration: none;
 }
-
 .menu .logo-toggle{
     display: none;
 }
-
 .nav-bar .nav-links{
     display: flex;
     align-items: center;
 }
-
 .nav-bar .nav-links li{
-    margin: 0 5px;
+    margin: 0 7px;
     list-style: none;
 }
-
 .nav-links li a{
     position: relative;
     font-size: 17px;
@@ -98,7 +96,11 @@ nav .nav-bar .logo a{
     text-decoration: none;
     padding: 10px;
 }
-
+.nav-register{
+    background-color: rgb(225, 16, 190);
+    padding: 8px 5px;
+    border-radius: 50%;
+}
 .nav-links li a::before{
     content: '';
     position: absolute;
@@ -112,16 +114,13 @@ nav .nav-bar .logo a{
     opacity: 0;
     transition: all 0.3s ease;
 }
-
 .nav-links li:hover a::before{
     opacity: 1;
 }
-
 .nav-bar .darkLight-searchBox{
     display: flex;
     align-items: center;
 }
-
 .darkLight-searchBox .dark-light,
 .darkLight-searchBox .searchToggle{
     height: 40px;
@@ -131,7 +130,6 @@ nav .nav-bar .logo a{
     justify-content: center;
     margin: 0 5px;
 }
-
 .dark-light i,
 .searchToggle i{
     position: absolute;
@@ -140,41 +138,33 @@ nav .nav-bar .logo a{
     cursor: pointer;
     transition: all 0.3s ease;
 }
-
 .dark-light i.sun{
     opacity: 0;
     pointer-events: none;
 }
-
 .dark-light.active i.sun{
     opacity: 1;
     pointer-events: auto;
 }
-
 .dark-light.active i.moon{
     opacity: 0;
     pointer-events: none;
 }
-
 .searchToggle i.cancel{
     opacity: 0;
     pointer-events: none;
 }
-
 .searchToggle.active i.cancel{
     opacity: 1;
     pointer-events: auto;
 }
-
 .searchToggle.active i.search{
     opacity: 0;
     pointer-events: none;
 }
-
 .searchBox{
     position: relative;
 }
-
 .searchBox .search-field{
     position: absolute;
     bottom: -85px;
@@ -191,13 +181,11 @@ nav .nav-bar .logo a{
     pointer-events: none;
     transition: all 0.3s ease;
 }
-
 .searchToggle.active ~ .search-field{
     bottom: -74px;
     opacity: 1;
     pointer-events: auto;
 }
-
 .search-field::before{
     content: '';
     position: absolute;
@@ -209,7 +197,6 @@ nav .nav-bar .logo a{
     transform: rotate(-45deg);
     z-index: -1;
 }
-
 .search-field input{
     height: 100%;
     width: 100%;
@@ -222,11 +209,9 @@ nav .nav-bar .logo a{
     color: var(--search-text);
     background-color: var(--search-bar);
 }
-
 body.dark .search-field input{
     color: var(--text-color);
 }
-
 .search-field i{
     position: absolute;
     color: var(--nav-color);
@@ -234,20 +219,17 @@ body.dark .search-field input{
     font-size: 22px;
     cursor: pointer;
 }
-
 body.dark .search-field i{
     color: var(--text-color);
 }
-
 @media (max-width: 790px) {
     nav .nav-bar .sidebarOpen{
         display: block;
     }
-
     .menu{
         position: fixed;
         height: 100%;
-        width: 320px;
+        width: 380px;
         left: -100%;
         top: 0;
         padding: 20px;
@@ -255,16 +237,13 @@ body.dark .search-field i{
         z-index: 100;
         transition: all 0.4s ease;
     }
-
     nav.active .menu{
         left: -0%;
     }
-
     nav.active .nav-bar .navLogo a{
         opacity: 0;
         transition: all 0.3s ease;
     }
-
     .menu .logo-toggle{
         display: block;
         width: 100%;
@@ -272,67 +251,20 @@ body.dark .search-field i{
         align-items: center;
         justify-content: space-between;
     }
-
     .logo-toggle .siderbarClose{
         color: var(--text-color);
-        font-size: 24px;
+        font-size: 20px;
         cursor: pointer;
     }
-
     .nav-bar .nav-links{
         flex-direction: column;
-        padding-top: 30px;
+        padding-top: 90px;
     }
-
     .nav-links li a{
         display: block;
-        margin-top: 20px;
-    }
+        margin-top: 15px;
+    }    
 }
-body{
-    background-color: #f8f8fd;
-    font-family: monospace;
-}
-#para{
-    padding-left: 15%;
-    padding-right: 15%;        
-}
-h1{
-    text-align: center;
-    color: rgb(234, 127, 255);
-    padding-top: 7%;
-}
-.slider{
-    height: 250px;
-    margin: auto;
-    position: relative;
-    width: 100%;
-    display: grid;
-    place-items: center;
-}
-.slider-track{
-    display: flex;
-    width: calc(300px * 6);
-    /* animation: scroll 10s linear infinite; */
-}
-.slide{
-    height: 200px;
-    width: 250px;
-    display: flex;
-    align-items: center;
-    padding: 15px;
-    perspective: 100px;
-}
-img{
-    width: 100%;
-}
-img:hover{
-    transform: translateY(25px);
-}
-img{
-   width: 100%;
-   transition: transform 0.3s;
-} 
 
 /* This is book category */
 .book-type{
@@ -373,7 +305,43 @@ a{
 }
 
 /* This is book category */
-@media(max-width:1000px){
+@media(max-width:950px){
+    .book-type{
+   display: grid;
+   grid-template-rows: auto auto;
+   grid-template-areas:
+        "cir-1 cir-2 cir-3 cir-4"
+        "cir-5 cir-6 cir-7 cir-8";
+   place-content: center center;
+   text-align: center;
+   font-size: 50px;      
+  }
+  #cir-1, #cir-2, #cir-3, #cir-4, #cir-5, #cir-6, #cir-7, #cir-8{
+    padding: 30px 30px;
+  }
+  #cir-9, #cir-10{
+   position: absolute;
+   display: none;
+  }
+   .book-category{
+       text-align: center;
+       /* padding-top: 20px; */
+       font-size:20px;
+       color: rgb(234, 6, 255);
+       font-style:normal;          
+
+   }     
+   a{
+       color: #143836;
+       font-size: small;       
+   }
+   .photo-1{
+       border-radius: 50%;
+       max-width: 55%;       
+   }
+}
+
+@media(max-width:750px){
     .book-type{
    display: grid;
    grid-template-rows: auto auto;
@@ -396,24 +364,22 @@ a{
        /* padding-top: 20px; */
        font-size:20px;
        color: rgb(234, 6, 255);
-       font-style:normal;                    
+       font-style:normal;          
 
-   }   
-   
+   }     
    a{
        color: #143836;
-       font-size: small;
-       
+       font-size: small;       
    }
    .photo-1{
        border-radius: 50%;
-       max-width: 55%;      
-       
+       max-width: 55%;       
    }
 }
 h4:hover{
     color: red;
-}   
+}  
+
 /* search icon ke liye */
 #sercha{
     padding: 0px 60px;        
@@ -422,28 +388,30 @@ h4:hover{
     color: rgba(218, 6, 246, 0.986);
     cursor: pointer;
 }
+
 /* for sliding images */
 .im-slip{
-    margin: 0%;
-    padding:7% 0;
-    box-sizing: border-box;
-
-    /* width: 100%; */
-    /* height: 100vh; */
-    /* display: flex; */
-    /* align-items: center; */
-    /* justify-content: center; */
+    margin-bottom: 0%;
+    padding:0 0;
+    box-sizing: border-box; 
+/* 
+     width: 100%; 
+     height: 100vh; 
+     display: flex;  */
+     /* align-items: center; 
+    justify-content: center; */
 } 
 .swiper{
-    width: 65%;
-    height: fit-content;
+    width: 100%;
+    height: 100%;
 }
 .swiper-slide img{
     width: 100%;
+    height: min-content;
 }
 .swiper .swiper-button-prev, .swiper .swiper-button-next{
-  color: white;
+  color: transparent;
 }
 .swiper .swiper-pagination-bullet-active{
-  background: white;
+  background: rgb(218, 11, 11);
 }
