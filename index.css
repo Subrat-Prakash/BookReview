@@ -229,7 +229,7 @@ body.dark .search-field i{
     .menu{
         position: fixed;
         height: 100%;
-        width: 380px;
+        width: 300px;
         left: -100%;
         top: 0;
         padding: 20px;
